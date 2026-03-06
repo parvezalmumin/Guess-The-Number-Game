@@ -1,0 +1,134 @@
+body {
+    background-color: black;
+    font-family: "Courier New", monospace;
+    color: lime;
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    color: yellow;
+    text-shadow: 2px 2px red;
+}
+
+.red-glow {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px orange;
+    animation: glowRed 1s infinite alternate;
+}
+
+@keyframes glowRed {
+    from { text-shadow: 0 0 5px red; }
+    to { text-shadow: 0 0 20px orange; }
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.col {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border: 2px solid lime;
+    width: 200px;
+    font-weight: bold;
+}
+
+input:focus, textarea:focus {
+    color: red;
+    outline: none;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+.retro-btn {
+    margin: 10px;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff0, #f0f);
+    border: 3px solid cyan;
+    color: black;
+    text-shadow: 1px 1px lime;
+    font-family: "Courier New", monospace;
+    box-shadow: 0 0 8px lime;
+}
+
+.retro-btn:hover {
+    background: linear-gradient(135deg, #f0f, #ff0);
+    color: yellow;
+}
+
+.hints-box {
+    border: 3px dashed cyan;
+    padding: 10px;
+    background-color: #111;
+    width: 250px;
+    box-shadow: 0 0 10px cyan;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
+
+/* Loading Bar */
+#loadingScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: lime;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 30px;
+    border: 2px solid lime;
+    margin-top: 20px;
+}
+
+#loadingFill {
+    width: 0%;
+    height: 100%;
+    background-color: lime;
+}
+
+/* Description & Comparison */
+#descriptionBox, #comparisonScreen {
+    border: 3px solid orange;
+    padding: 15px;
+    margin: 20px auto;
+    width: 350px;
+    background-color: #111;
+    box-shadow: 0 0 15px orange;
+}
+
+.comparison-table {
+    display: flex;
+    justify-content: space-around;
+}
+
+.comparison-table div {
+    width: 45%;
+    border: 2px solid cyan;
+    padding: 10px;
+    box-shadow: 0 0 10px cyan;
+}
