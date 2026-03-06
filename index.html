@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>90s Hacker Guess Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Player 1 Section -->
+    <div id="player1-section">
+        <h1>PLAYER 1: GIVE THE NUMBER</h1>
+        <h2 class="red-glow">Keep away Player 2 from the screen!</h2>
+
+        <div class="row">
+
+            <div class="col">
+                <label>Secret Number:</label>
+                <input type="number" id="secretNumber" placeholder="Enter Secret Number">
+            </div>
+
+            <div class="col">
+                <label>Hint 1 (required)</label>
+                <input type="text" id="hint1" placeholder="Hint 1">
+                <label>Hint 2 (optional)</label>
+                <input type="text" id="hint2" placeholder="Hint 2">
+                <label>Hint 3 (optional)</label>
+                <input type="text" id="hint3" placeholder="Hint 3">
+            </div>
+
+            <div class="col">
+                <label>Description (required)</label>
+                <textarea id="description" placeholder="Explain why hints relate to the number"></textarea>
+            </div>
+
+        </div>
+
+        <button class="retro-btn" id="hideBtn" onclick="hidePlayer1Inputs()">Hide Inputs</button>
+        <span id="hideStatus"></span>
+        <button class="retro-btn" id="startBtn" onclick="startGame()">Start Game</button>
+
+        <p id="warning1" class="warning"></p>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" style="display:none;">
+        <h1>LOADING...</h1>
+        <div class="loading-bar">
+            <div id="loadingFill"></div>
+        </div>
+    </div>
+
+    <!-- Player 2 Section -->
+    <div id="player2-section" style="display:none;">
+        <h1>PLAYER 2: GUESS THE NUMBER</h1>
+        <p>Chances left: <span id="chancesLeft">3</span></p>
+
+        <div class="row">
+            <div class="hints-box">
+                <p id="showHint1"></p>
+                <p id="showHint2"></p>
+                <p id="showHint3"></p>
+            </div>
+        </div>
+
+        <input type="number" id="guessNumber" placeholder="Enter your guess">
+        <button class="retro-btn" onclick="checkGuess()">Check</button>
+
+        <p id="result"></p>
+        <p id="warning2" class="warning"></p>
+
+        <div id="choiceScreen" style="display:none;">
+            <p>Do you want to match your mindset with Player 1? (Yes/No)</p>
+            <button class="retro-btn" onclick="mindsetChoice('yes')">Yes</button>
+            <button class="retro-btn" onclick="mindsetChoice('no')">No</button>
+        </div>
+
+        <div id="descriptionBox" style="display:none;">
+            <h3>📖 Player 2 Explanation</h3>
+            <textarea id="player2Desc" placeholder="Explain how you cracked the number with hints"></textarea>
+            <button class="retro-btn" onclick="compareMindset()">Submit</button>
+        </div>
+
+        <div id="comparisonScreen" style="display:none;">
+            <h3>📝 Mindset Comparison</h3>
+            <div class="comparison-table">
+                <div>
+                    <h4>Player 1 Description</h4>
+                    <p id="showDescription1"></p>
+                </div>
+                <div>
+                    <h4>Player 2 Description</h4>
+                    <p id="showDescription2"></p>
+                </div>
+            </div>
+        </div>
+
+        <button class="retro-btn" onclick="restartGame()" id="restartBtn" style="display:none;">Restart</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
